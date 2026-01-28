@@ -35,3 +35,22 @@ Developed an interactive data visualization dashboard to analyze and compare nut
 * P = Post
 * Q = Quaker Oats
 * R = Ralston Purina
+
+# Some outputs:
+```
+fig, ax = plt.subplots(figsize = (10,8))
+sns.heatmap(adjusted_cereal_corr, mask =adjusted_mask, xticklabels ='auto', annot = True, fmt='.2f', cmap ='Blues',
+           vmin = -1, vmax = 1,annot_kws ={"fontsize":13}, linecolor = 'white', linewidth =0.5
+           ); #fmt: limit decimals
+
+yticks = [i.upper() for i in adjusted_cereal_corr.index];
+xticks = [i.upper() for i in adjusted_cereal_corr.columns];
+
+ax.set_yticklabels(yticks, rotation = 0, fontsize = 10);
+ax.set_xticklabels(yticks,fontsize = 10);
+
+title = 'CORRELATION MATRIX\nSAMPLED CEREALS COMPOSITION\n'
+ax.set_title(title, loc='center', fontsize = 18);
+```
+<img width="899" height="590" alt="image" src="https://github.com/user-attachments/assets/42793986-c77f-4467-a842-16b2844070ca" />
+
